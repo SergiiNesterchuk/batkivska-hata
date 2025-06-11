@@ -4,7 +4,7 @@ function Home() {
   return (
     <div className="flex flex-col items-center mt-16">
       <h1 className="text-4xl font-bold text-green-700 mb-2 drop-shadow">
-        Батьківська хата
+        Батьківська хата777
       </h1>
       <p className="text-xl text-gray-700 mb-6 text-center max-w-xl">
         Сімейний блог про сад, город, врожай, рецепти та натуральну продукцію з села.<br />
