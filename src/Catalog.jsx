@@ -1,0 +1,28 @@
+import products from './data/products';
+
+function Catalog({ onAddToCart }) {
+  return (
+    <div className="max-w-4xl mx-auto p-4 grid grid-cols-1 md:grid-cols-2 gap-6">
+      {products.map((item) => (
+        <div key={item.id} className="bg-white rounded-xl shadow p-4 flex flex-col items-center">
+          <img src={item.image} alt={item.name} className="w-40 h-40 object-cover rounded mb-3" />
+          <h2 className="text-lg font-bold mb-1">{item.name}</h2>
+          <p className="text-gray-600 text-sm mb-2 text-center">{item.description}</p>
+          <div className="text-green-700 font-semibold mb-2">{item.price} грн</div>
+          <div className="text-xs text-gray-400 mb-2">
+            {item.stock > 0 ? `В наявності: ${item.stock} шт.` : 'Немає в наявності'}
+          </div>
+          <button
+            className="bg-green-500 text-white px-4 py-2 rounded-lg font-semibold mt-auto disabled:bg-gray-300 disabled:text-gray-500"
+            onClick={() => onAddToCart(item)}
+            disabled={item.stock === 0}
+          >
+            Додати в корзину
+          </button>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+export default Catalog;
